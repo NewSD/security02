@@ -13,6 +13,9 @@
         </collection>
     </resultMap>
     <select id="getAllMenus" resultMap="BaseResultMap">
-        SELECT m.*,r.id AS rid,r.name AS rname,r.nameZh AS rnameZh FROM menu m LEFT JOIN menu_role mr ON m.`id`=mr.`mid` LEFT JOIN role r ON mr.`rid`=r.`id`
+        SELECT m.*,r.id AS rid,r.name AS rname,r.nameZh AS rnameZh
+        FROM menu m
+        LEFT JOIN menu_role mr ON m.`id`=mr.`mid`
+        LEFT JOIN role r ON mr.`rid`=r.`id`
     </select>
 </mapper>
